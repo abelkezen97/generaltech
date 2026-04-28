@@ -41,10 +41,10 @@ const BRAND_LOGOS = [
   <div class="absolute inset-0 z-0 overflow-hidden">
     {SLIDES.map((slide, idx) => (
       <div 
-        class={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === 0 ? 'opacity-100' : 'opacity-0'}`} 
+        class={`absolute inset-0 transition-all duration-[1500ms] ease-in-out ${idx === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`} 
         data-slide-bg={idx}
       >
-        <img src={slide.image} alt="" class="absolute inset-0 w-full h-full object-cover transform scale-100" />
+        <img src={slide.image} alt="" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
@@ -56,12 +56,12 @@ const BRAND_LOGOS = [
     <div class="w-full flex flex-col pt-0 pb-32">
       {SLIDES.map((slide, idx) => (
         <div 
-          class={`max-w-4xl transition-all duration-700 ease-out absolute ${idx === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+          class={`max-w-4xl transition-all duration-[1000ms] delay-300 ease-out absolute ${idx === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}
           data-slide-content={idx}
         >
           <div class="flex items-center gap-3 mb-2">
             <div class="w-8 h-[2px] bg-[#FF0000]"></div>
-            <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-white">{slide.tag}</span>
+            <span class="text-[11px] font-bold tracking-[0.25em] uppercase text-white">{slide.tag}</span>
           </div>
           <h1 class="text-5xl md:text-[76px] lg:text-[86px] font-black tracking-tighter leading-[1.05] text-white mb-6">
             {idx === 0 ? (
@@ -107,7 +107,7 @@ const BRAND_LOGOS = [
         <img 
           src={logo} 
           alt="" 
-          class="h-8 md:h-10 w-auto object-contain mx-6 md:mx-8 opacity-60 grayscale invert transition-all duration-500 hover:scale-110 hover:opacity-100 hover:grayscale-0 hover:invert-0" 
+          class="h-6 md:h-7 w-auto object-contain mx-6 md:mx-8 opacity-60 grayscale invert transition-all duration-500 hover:scale-110 hover:opacity-100 hover:grayscale-0 hover:invert-0" 
           style="mix-blend-mode: screen;"
         />
       ))}
@@ -136,13 +136,15 @@ const BRAND_LOGOS = [
   function updateSlides(index) {
     backgrounds.forEach((bg, i) => {
       bg.classList.toggle('opacity-100', i === index);
+      bg.classList.toggle('scale-100', i === index);
       bg.classList.toggle('opacity-0', i !== index);
+      bg.classList.toggle('scale-105', i !== index);
     });
     contents.forEach((content, i) => {
       content.classList.toggle('opacity-100', i === index);
       content.classList.toggle('translate-y-0', i === index);
       content.classList.toggle('opacity-0', i !== index);
-      content.classList.toggle('translate-y-10', i !== index);
+      content.classList.toggle('translate-y-8', i !== index);
       content.classList.toggle('pointer-events-none', i !== index);
     });
     dots.forEach((dot, i) => {
