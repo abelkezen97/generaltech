@@ -1,0 +1,70 @@
+---
+const brands = [
+  "1069078Wohler_lOGO1.jpg", "1100091cas.jpg", "1260236bartt.jpg", "1459341ASM_Logo2.jpg", "1468461Dwyer_logo2.jpg",
+  "1529778Conflow_logo2.jpg", "1711903winters.jpg", "177585ASCC.jpg", "1779314marksdgfdfg.jpg", "1978285dghghj.jpg",
+  "2166450Fluidwell_Logo_-_Updated1.jpg", "2184855logo-desoutter2.jpg", "2338480Advantech_logo12.jpg", "2566043Vaisala-EN-authorized-partner-logo-blue-RGB2.jpg",
+  "2572727Snap-on_logo2.jpg", "2590780Alicat_Logo2.jpg", "2595445debbb.jpg", "2708844gdfgh.jpg", "2778868crrr.jpg", "2843151Vesta-log1.jpg",
+  "3055562treed.jpg", "314877Omron_logo2.jpg", "3193105brann.jpg", "3492570wikui.jpg", "3559431Qmark_logo1.jpg", "3563742palmer-wahl-logo2.jpg",
+  "4100825Helling_logo_222.jpg", "41832818364752lascar-logo.jpg", "4273905western_ins.jpg", "4321895aimtti.jpg", "4358973Martindale-logo2.jpg",
+  "4628205topp.jpg", "4654567MotoVario2.jpg", "4682976defll.jpg", "5212528King_Test_Logo-012.jpg", "5213209lcndt.jpg", "5317025varavvv.jpg",
+  "5493599Micronics_logo2.jpg", "5708703Plastiform_logo2.jpg", "5851592api.jpg", "5882747Geonica_Logo2.jpg", "5889333naber.jpg",
+  "595627norbbb.jpg", "6084106Delta_Mobrey_Logo2.jpg", "6384110Rodcraft_Logo2.jpg", "6537887miviconn.jpg", "6620630rozone_logo1.jpg",
+  "6684140smc.jpg", "702355visiii.jpg", "7030905Concoa_logo2.jpg", "7110835Penta_Valves2.jpg", "7132937kro.jpg", "7912786milwaukee-LOGO2.jpg",
+  "7938990einstt.jpg", "8082444aveee.jpg", "8109546167029Valbia.jpg", "8364752lascar-logo.jpg", "8378095fischer-technology-inc-logo-vector2.jpg",
+  "8564035leroy123.jpg", "8631030nuflo.jpg", "8772320preccc.jpg", "8787533hipp.jpg", "8820822gasdasdas.jpg", "8888994Flexbar_products1.jpg",
+  "920536fintek.jpg", "9440519cameron.jpg", "9518134iffm.jpg", "9549952Sonceboz1.jpg", "9555420asper.jpg", "9761133acs_logo_overlap2.jpg",
+  "9851091dgedrr.jpg", "9877874ban1.jpg", "9947996ACI_DWYER1.jpg", "dakott.jpg", "emersioon.jpg", "mercoidd.jpg", "moor.jpg", "phymix.jpg"
+];
+---
+
+<section class="bg-white pt-16 pb-24 border-b border-gray-50 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    
+    <div class="flex flex-col items-center text-center mb-20 max-w-4xl mx-auto opacity-0 translate-y-8 reveal-brands">
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <div class="w-8 h-[2px] bg-[#FF0000]"></div>
+        <span class="text-[11px] font-bold tracking-[0.25em] uppercase text-[#FF0000]">Authorized Partner</span>
+        <div class="w-8 h-[2px] bg-[#FF0000]"></div>
+      </div>
+      
+      <h2 class="text-5xl lg:text-[72px] font-black tracking-tight text-general-black leading-[0.95] mb-8">
+        Featured <br />
+        <span class="text-[#FF0000] italic font-medium">Brands.</span>
+      </h2>
+      
+      <p class="text-gray-500 font-light text-xl leading-relaxed max-w-2xl mx-auto border-t border-[#FF0000]/10 pt-8">
+        Partnering with over 90 global manufacturers to bring authentic precision instruments and authorized technical support to the UAE market.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4 px-2">
+      {brands.map((brand, index) => (
+        <div 
+          class="flex items-center justify-center p-3 hover:scale-110 transition-all duration-500 cursor-pointer h-16 md:h-20 bg-gray-50/30 rounded-xl opacity-0 reveal-brands"
+          style={`transition-delay: ${(index % 16) * 30}ms`}
+        >
+          <img 
+            src={`/brandlogos/${brand}`} 
+            alt="Brand Logo" 
+            class="max-h-full max-w-full object-contain mix-blend-multiply"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-brands').forEach(item => observer.observe(item));
+</script>

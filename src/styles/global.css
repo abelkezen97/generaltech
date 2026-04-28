@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-general-red: #FF0000;
+  --color-general-black: #000000;
+  --color-general-white: #FFFFFF;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-black font-sans antialiased overflow-x-hidden;
+  }
+}

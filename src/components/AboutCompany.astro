@@ -1,0 +1,100 @@
+---
+const items = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg>`,
+    title: "Established Since 1998",
+    desc: "A national leader in the supply of Test and Measurement Equipment, Calibration and Training. Providing cost-effective solutions and exceptional service."
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    title: "Global Industry Supplier",
+    desc: "Servicing all sectors in all regions, from Utilities, Education and Facilities to Medical, Marine/Offshore and Public Sector around the globe."
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`,
+    title: "Industry Quality Standard",
+    desc: "ISO/IEC 17025 accredited through EIAC. We perform on-site or in-lab calibration services on a wide variety of precision measurement equipment."
+  }
+];
+---
+
+<section class="w-full bg-[#FAFAFA] pt-16 pb-24 lg:pt-20 lg:pb-32 relative z-20 border-t border-gray-100 overflow-hidden" id="about-section">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-32 lg:mb-48">
+      {items.map((item, idx) => (
+        <div class="group relative bg-white p-12 lg:p-14 rounded-2xl border border-gray-100 flex flex-col transition-all duration-700 hover:shadow-[0_60px_100px_-30px_rgba(255,0,0,0.12)] hover:-translate-y-3 overflow-hidden opacity-0 translate-y-8 reveal-item">
+          <div class="absolute inset-0 bg-gradient-to-br from-transparent to-[#FFF5F5]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          <div class="relative z-10">
+            <div class="w-16 h-16 rounded-2xl bg-white border border-gray-100 flex items-center justify-center shadow-sm group-hover:bg-[#FF0000] group-hover:border-[#FF0000] group-hover:shadow-[0_20px_40px_-5px_rgba(255,0,0,0.3)] transition-all duration-500 mb-10 text-[#FF0000] group-hover:text-white">
+              <Fragment set:html={item.icon} />
+            </div>
+            
+            <h4 class="text-[23px] font-bold tracking-tight text-gray-900 mb-6 leading-tight">
+              {item.title}
+            </h4>
+            
+            <p class="text-gray-500 text-[16.5px] leading-[1.8] font-light">
+              {item.desc}
+            </p>
+          </div>
+
+          <div class="absolute top-12 right-12 w-2 h-2 rounded-full bg-gray-100 group-hover:bg-[#FF0000] transition-colors duration-700"></div>
+        </div>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+      <div class="lg:col-span-5 flex flex-col opacity-0 translate-y-8 reveal-item">
+        <div class="sticky top-32">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-8 h-[2px] bg-[#FF0000]"></div>
+            <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400">Company Overview</span>
+          </div>
+          <h2 class="text-5xl lg:text-[72px] font-black tracking-tight text-gray-900 leading-[0.95]">
+            The <span class="text-[#FF0000] italic font-medium">precision</span> <br /> standard.
+          </h2>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 space-y-12 text-[17px] md:text-[18.5px] text-gray-600 leading-[1.85] font-light opacity-0 translate-y-8 reveal-item">
+        <div class="space-y-8">
+          <p>
+            <strong class="text-gray-900 font-bold">General Tech Services</strong> — ISO 17025 Calibration Laboratory and Industrial Equipment Supplier UAE — was established in 1998 by Mr. John Mathew following his appointment as the authorized Mitutoyo distributor UAE. 
+          </p>
+          <p>
+            Over 26 years, General Tech Services has grown from a three-person operation into one of the UAE's most respected and experienced calibration and industrial supply organizations — with over 60 trained technicians, a 10,000 square foot facility in Sharjah, and a fleet of over 20 service vehicles providing on-site calibration services UAE across every emirate.
+          </p>
+          <p>
+            As an EIAC accredited calibration laboratory UAE certified to ISO 17025 and ISO 9001:2015, we deliver the technical service excellence that UAE industry demands — from calibration company Abu Dhabi to laboratory services across the GCC.
+          </p>
+        </div>
+
+        <div class="pt-12 border-t border-gray-100 mt-12 relative">
+          <div class="absolute left-0 top-12 w-[3px] h-20 bg-[#FF0000]/20"></div>
+          <div class="pl-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 tracking-tight">What is ISO 17025 ?</h3>
+            <p class="text-gray-500 font-light">
+              ISO 17025 is the international standard that defines technical competence requirements for calibration laboratories. In the UAE, ISO 17025 calibration performed by General Tech Services ensures every result is technically valid, traceable to national standards, and supported by full measurement uncertainty documentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-item').forEach(item => observer.observe(item));
+</script>

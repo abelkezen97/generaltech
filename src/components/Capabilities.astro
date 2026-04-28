@@ -1,0 +1,114 @@
+---
+const caps = [
+  { 
+    name: 'Dimensional', 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 10.3V7"/><path d="M12 10.3V7"/><path d="M17 10.3V7"/><path d="M7 17v-3.7"/><path d="M12 17v-3.7"/><path d="M17 17v-3.7"/></svg>`,
+    desc: "Precision calibration for calipers, micrometers, height gauges, and other dimensional measurement tools to ensure exact mechanical tolerances.",
+    image: "/dimensional_calibration.png"
+  },
+  { 
+    name: 'Electrical', 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    desc: "Comprehensive testing for multimeters, oscilloscopes, and power supplies. Traceable validation of voltage, current, and resistance.",
+    image: "/electriccalibration.png"
+  },
+  { 
+    name: 'Pressure', 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 10-4 4-4-4"/></svg>`,
+    desc: "Accurate verification for pressure gauges, transducers, and transmitters operating in critical industrial environments.",
+    image: "/pressurecalibration.png"
+  },
+  { 
+    name: 'Temperature', 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>`,
+    desc: "Calibration of thermal cameras, RTDs, and thermocouples across extreme temperature ranges for process control reliability.",
+    image: "/temperaturecalibration.png"
+  },
+  { 
+    name: 'Humidity', 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>`,
+    desc: "Environmental mapping and calibration of hygrometers, data loggers, and climate chambers for sensitive operations.",
+    image: "/humiditycalibration.png"
+  },
+  { 
+    name: 'Torque', 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.77z"/></svg>`,
+    desc: "Certification of torque wrenches, multipliers, and transducers. Ensuring structural integrity and assembly precision.",
+    image: "/torquecalibration.png"
+  },
+];
+---
+
+<section class="relative h-[350vh] bg-[#0A0A0A] border-t border-gray-900" id="capabilities-section">
+  <div class="sticky top-0 flex flex-col h-screen overflow-hidden">
+    <div class="w-full shrink-0 pt-24 lg:pt-30 pb-6 lg:pb-12">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-8 h-[2px] bg-[#FF0000]"></div>
+              <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#FF0000]">What is ISO 17025 ?</span>
+            </div>
+            <h2 class="text-5xl lg:text-[72px] font-black tracking-tight text-white leading-[0.95]">
+              Calibration <br />
+              <span class="text-[#FF0000] italic font-medium">Capabilities.</span>
+            </h2>
+          </div>
+          <a href="#" class="inline-flex items-center justify-center gap-3 bg-white/5 hover:bg-[#FF0000] text-white border border-white/10 px-8 py-4 rounded-full text-[13px] font-bold tracking-[0.05em] uppercase transition-all duration-500 group shrink-0 mb-4 backdrop-blur-md">
+            VIEW ALL
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1.5 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-1 flex items-center pb-8 lg:pb-16 w-full relative">
+      <div class="flex gap-6 lg:gap-8 px-6 md:px-[max(48px,calc((100vw-1280px)/2+48px))] w-max transition-transform duration-75 ease-out" id="horizontal-scroll-content">
+        {caps.map((cap) => (
+          <div class="w-[85vw] md:w-[350px] xl:w-[400px] h-[380px] md:h-[420px] xl:h-[460px] shrink-0 relative rounded-3xl overflow-hidden group border border-white/5 bg-white/5">
+            <div class="absolute inset-0 w-full h-full overflow-hidden">
+              <img src={cap.image} alt={cap.name} class="w-full h-full object-cover opacity-50 transition-transform duration-1000 group-hover:scale-110" />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/60 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 w-full p-8 lg:p-12 z-20 text-left">
+              <div class="flex items-center gap-6 mb-8">
+                <div class="w-14 h-14 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center group-hover:bg-[#FF0000] group-hover:border-[#FF0000] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-500 text-white">
+                  <Fragment set:html={cap.icon} />
+                </div>
+              </div>
+              <h3 class="text-3xl lg:text-4xl font-black mb-4 tracking-tight text-white leading-none">
+                {cap.name} <br /> <span class="font-light italic opacity-60">Calibration</span>
+              </h3>
+              <p class="text-white/60 text-[16px] lg:text-[17px] leading-relaxed max-w-sm font-light">
+                {cap.desc}
+              </p>
+            </div>
+            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#FF0000]/20 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10 pointer-events-none"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const section = document.getElementById('capabilities-section');
+  const content = document.getElementById('horizontal-scroll-content');
+
+  if (section && content) {
+    window.addEventListener('scroll', () => {
+      const rect = section.getBoundingClientRect();
+      const top = -rect.top;
+      const height = rect.height - window.innerHeight;
+      
+      if (top >= 0 && top <= height) {
+        const progress = top / height;
+        const maxScroll = content.scrollWidth - window.innerWidth;
+        const move = progress * 62; // Matching the -62% from the original React component
+        content.style.transform = `translateX(-${move}%)`;
+      }
+    });
+  }
+</script>

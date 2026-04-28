@@ -1,0 +1,177 @@
+---
+const SLIDES = [
+  {
+    tag: "Premium Industrial Supplies",
+    title: "The Source For Industrial Supplies.",
+    description: "Offering a comprehensive selection of high-quality industrial supplies to meet your business needs. Count on us for reliable products that keep your operations running smoothly and efficiently.",
+    image: "/warehousenew.png",
+    ctaText: "View Products",
+    ctaLink: "https://generaltechshop.com"
+  },
+  {
+    tag: "Established Since 1998",
+    title: "Precision, Supplies, and Service Excellence.",
+    description: "A national leader in the supply of Test and Measurement Equipment, Calibration and Training. Providing customers with cost-effective solutions and exceptional customer service.",
+    image: "/industrial supplies.png",
+    ctaText: "Explore Capabilities",
+    ctaLink: "#"
+  }
+];
+
+const BRAND_LOGOS = [
+  "/brandlogos/2572727Snap-on_logo2.jpg",
+  "/brandlogos/595627norbbb.jpg",
+  "/brandlogos/314877Omron_logo2.jpg",
+  "/brandlogos/3492570wikui.jpg",
+  "/brandlogos/1468461Dwyer_logo2.jpg",
+  "/brandlogos/2184855logo-desoutter2.jpg",
+  "/brandlogos/41832818364752lascar-logo.jpg",
+  "/brandlogos/5493599Micronics_logo2.jpg",
+  "/brandlogos/6084106Delta_Mobrey_Logo2.jpg",
+  "/brandlogos/6384110Rodcraft_Logo2.jpg",
+  "/brandlogos/7912786milwaukee-LOGO2.jpg",
+  "/brandlogos/8364752lascar-logo.jpg",
+  "/brandlogos/9549952Sonceboz1.jpg",
+  "/brandlogos/1069078Wohler_lOGO1.jpg"
+];
+---
+
+<section class="relative h-screen flex items-center overflow-hidden bg-black" id="hero-slider">
+  {/* Background Images */}
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    {SLIDES.map((slide, idx) => (
+      <div 
+        class={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === 0 ? 'opacity-100' : 'opacity-0'}`} 
+        data-slide-bg={idx}
+      >
+        <img src={slide.image} alt="" class="absolute inset-0 w-full h-full object-cover transform scale-100" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+    ))}
+  </div>
+
+  {/* Content Area */}
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-start pt-40 md:pt-48 lg:pt-56 h-full">
+    <div class="w-full flex flex-col pt-0 pb-32">
+      {SLIDES.map((slide, idx) => (
+        <div 
+          class={`max-w-4xl transition-all duration-700 ease-out absolute ${idx === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+          data-slide-content={idx}
+        >
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-[2px] bg-[#FF0000]"></div>
+            <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-white">{slide.tag}</span>
+          </div>
+          <h1 class="text-5xl md:text-[76px] lg:text-[86px] font-black tracking-tighter leading-[1.05] text-white mb-6">
+            {idx === 0 ? (
+              <>The Source For <br class="hidden md:block" /><span class="text-[#FF0000] font-medium italic tracking-normal">Industrial Supplies.</span></>
+            ) : (
+              <>Precision, Supplies, and <br class="hidden md:block" /><span class="text-[#FF0000] font-medium italic tracking-normal">Service Excellence.</span></>
+            )}
+          </h1>
+          <p class="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed mb-10 font-normal">{slide.description}</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={slide.ctaLink} class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black px-10 py-4.5 rounded-xl text-[14px] font-bold tracking-tight transition-all duration-400 group">
+              {slide.ctaText}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1.5 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Side Navigation */}
+  <div class="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-30 hidden lg:flex flex-col items-center gap-6">
+    <button id="hero-prev" class="text-white/60 hover:text-white transition-colors p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+    <div class="flex flex-col gap-3 my-2">
+      {SLIDES.map((_, idx) => (
+        <button 
+          class={`w-2 h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-[#FF0000] scale-125' : 'bg-white/40 hover:bg-white/80'}`}
+          data-slide-dot={idx}
+        ></button>
+      ))}
+    </div>
+    <button id="hero-next" class="text-white/60 hover:text-white transition-colors p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+  </div>
+
+  {/* Brands Marquee */}
+  <div class="absolute bottom-12 md:bottom-20 left-0 w-full overflow-hidden z-20">
+    <div class="flex whitespace-nowrap animate-marquee">
+      {[...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS].map((logo) => (
+        <img 
+          src={logo} 
+          alt="" 
+          class="h-8 md:h-10 w-auto object-contain mx-8 md:mx-12 opacity-50 brightness-0 invert transition-all duration-500 hover:scale-110 grayscale" 
+          style="mix-blend-mode: screen;"
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    display: flex;
+    animation: marquee 40s linear infinite;
+  }
+</style>
+
+<script>
+  let currentIndex = 0;
+  const count = 2; // Fixed count for SLIDES
+  const backgrounds = document.querySelectorAll('[data-slide-bg]');
+  const contents = document.querySelectorAll('[data-slide-content]');
+  const dots = document.querySelectorAll('[data-slide-dot]');
+
+  function updateSlides(index) {
+    backgrounds.forEach((bg, i) => {
+      bg.classList.toggle('opacity-100', i === index);
+      bg.classList.toggle('opacity-0', i !== index);
+    });
+    contents.forEach((content, i) => {
+      content.classList.toggle('opacity-100', i === index);
+      content.classList.toggle('translate-y-0', i === index);
+      content.classList.toggle('opacity-0', i !== index);
+      content.classList.toggle('translate-y-10', i !== index);
+      content.classList.toggle('pointer-events-none', i !== index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-[#FF0000]', i === index);
+      dot.classList.toggle('scale-125', i === index);
+      dot.classList.toggle('bg-white/40', i !== index);
+      dot.classList.toggle('scale-100', i !== index);
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % count;
+    updateSlides(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + count) % count;
+    updateSlides(currentIndex);
+  }
+
+  document.getElementById('hero-next')?.addEventListener('click', nextSlide);
+  document.getElementById('hero-prev')?.addEventListener('click', prevSlide);
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      currentIndex = i;
+      updateSlides(i);
+    });
+  });
+
+  // Autoplay
+  setInterval(nextSlide, 6000);
+</script>
