@@ -101,13 +101,13 @@ const BRAND_LOGOS = [
   </div>
 
   {/* Brands Marquee */}
-  <div class="absolute bottom-6 left-0 w-full py-4 z-20 overflow-hidden">
+  <div class="absolute bottom-10 left-0 w-full py-4 z-20 overflow-hidden">
     <div class="flex whitespace-nowrap animate-marquee">
       {[...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS].map((logo) => (
         <img 
           src={logo} 
           alt="" 
-          class="h-12 md:h-14 w-auto object-contain mx-12 md:mx-16 opacity-60 grayscale invert transition-all duration-500 hover:scale-110 hover:opacity-100 hover:grayscale-0 hover:invert-0" 
+          class="h-8 md:h-10 w-auto object-contain mx-6 md:mx-8 opacity-60 grayscale invert transition-all duration-500 hover:scale-110 hover:opacity-100 hover:grayscale-0 hover:invert-0" 
           style="mix-blend-mode: screen;"
         />
       ))}
